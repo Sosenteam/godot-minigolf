@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dybrmr67140fh"]
+
+[ext_resource type="Texture2D" uid="uid://d2mgmn5xvo3sj" path="res://art/PNG/Equipment/ball_golf.png" id="1_nw751"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nw751"]
+friction = 0.8
+bounce = 0.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60p4i"]
+radius = 9.0
+
+[node name="PlayerBall" type="RigidBody2D" unique_id=972164472]
+physics_material_override = SubResource("PhysicsMaterial_nw751")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800357941]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_nw751")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=574627740]
+shape = SubResource("CircleShape2D_60p4i")
