@@ -7,10 +7,10 @@
 [node name="TemplateLevel" type="Node2D" unique_id=419148995]
 metadata/level_id = -1
 
-[node name="ObjectTilemap" parent="." unique_id=1978746848 instance=ExtResource("1_8424m")]
+[node name="BackgroundTilemap" parent="." unique_id=1684200721 instance=ExtResource("2_cllgf")]
 tile_map_data = PackedByteArray()
 
-[node name="BackgroundTilemap" parent="." unique_id=1684200721 instance=ExtResource("2_cllgf")]
+[node name="ObjectTilemap" parent="." unique_id=1978746848 instance=ExtResource("1_8424m")]
 tile_map_data = PackedByteArray()
 
 [node name="PlayerBall" parent="." unique_id=972164472 instance=ExtResource("3_3jtrw")]
