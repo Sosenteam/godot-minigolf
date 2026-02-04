@@ -83,8 +83,5 @@ func _input(event: InputEvent) -> void:
 				var new_impulse = -mouse.drag_vector
 				apply_impulse(new_impulse*impulse_mult)
 				shot_allowed = false
-				print('shot no more')
 		mouse.is_down = event.pressed
 		
-		
-	

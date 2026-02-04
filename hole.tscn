@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dd8dya2mrjpee"]
+
+[ext_resource type="Texture2D" uid="uid://bv2aqomu13vaq" path="res://art/PNG/Elements/element (3).png" id="1_ln22a"]
+[ext_resource type="Script" uid="uid://bg1o2i3lyuk1b" path="res://hole.gd" id="2_1s0jb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ln22a"]
+radius = 6.0
+
+[node name="Hole" type="Sprite2D" unique_id=66238368]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_ln22a")
+script = ExtResource("2_1s0jb")
+
+[node name="HoleArea" type="Area2D" parent="." unique_id=635150244]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleArea" unique_id=817535042]
+shape = SubResource("CircleShape2D_ln22a")
+
+[connection signal="body_entered" from="HoleArea" to="." method="_on_hole_area_body_entered"]

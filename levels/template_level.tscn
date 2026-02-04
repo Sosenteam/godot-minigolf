@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://doap0hfppc7py"]
+
+[ext_resource type="PackedScene" uid="uid://dhiweb0tj15bi" path="res://object_tilemap.tscn" id="1_8424m"]
+[ext_resource type="PackedScene" uid="uid://85byadsmtcho" path="res://background_tilemap.tscn" id="2_cllgf"]
+[ext_resource type="PackedScene" uid="uid://dybrmr67140fh" path="res://player_ball.tscn" id="3_3jtrw"]
+
+[node name="TemplateLevel" type="Node2D" unique_id=419148995]
+metadata/level_id = -1
+
+[node name="ObjectTilemap" parent="." unique_id=1978746848 instance=ExtResource("1_8424m")]
+tile_map_data = PackedByteArray()
+
+[node name="BackgroundTilemap" parent="." unique_id=1684200721 instance=ExtResource("2_cllgf")]
+tile_map_data = PackedByteArray()
+
+[node name="PlayerBall" parent="." unique_id=972164472 instance=ExtResource("3_3jtrw")]

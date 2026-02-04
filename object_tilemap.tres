@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://bbs3stxrwyqsv"]
 
 [ext_resource type="Texture2D" uid="uid://bt6utbpd8uspp" path="res://art/Tilesheet/elements.png" id="1_kfh5m"]
+[ext_resource type="PackedScene" uid="uid://dd8dya2mrjpee" path="res://hole.tscn" id="2_scyb6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kfh5m"]
 friction = 0.0
@@ -14,6 +15,7 @@ texture_region_size = Vector2i(64, 64)
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -3.1939926, -32, 2.8254566, 32, 2.70261, 32, -3.1939945)
 2:0/0 = 0
 2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4.985841, 3.0373511, -2.9800427, 4.9858413, 2.9227347, 5.0431495, 4.9858413, 2.980043, 4.928532, -3.0373514, 2.8654256, -5.0431495, -3.071148, -5.1595283, -4.985841, -2.8081172)
+2:0/0/custom_data_0 = true
 1:1/0 = 0
 2:1/0 = 0
 4:1/0 = 0
@@ -152,13 +154,21 @@ texture_region_size = Vector2i(64, 64)
 7:8/0 = 0
 8:8/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_heu5i"]
+resource_name = "Hole"
+scenes/1/scene = ExtResource("2_scyb6")
+scenes/1/display_placeholder = true
+
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-physics_layer_1/collision_layer = 128
+physics_layer_1/collision_layer = 0
 physics_layer_1/collision_mask = 128
 physics_layer_1/physics_material = SubResource("PhysicsMaterial_kfh5m")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Walls"
 terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
+custom_data_layer_0/name = "is_goal"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_scyb6")
+sources/1 = SubResource("TileSetScenesCollectionSource_heu5i")
