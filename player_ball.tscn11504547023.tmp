@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://d2mgmn5xvo3sj" path="res://art/PNG/Equipment/ball_golf.png" id="1_nw751"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nw751"]
-friction = 0.0
 bounce = 0.7
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60p4i"]
@@ -14,8 +13,9 @@ radius = 9.0
 physics_material_override = SubResource("PhysicsMaterial_nw751")
 gravity_scale = 0.0
 lock_rotation = true
-linear_damp = 1.5
+linear_damp = 100.0
 script = ExtResource("1_60p4i")
+arrow_angle = 0.157
 
 [node name="ArrowBase" type="Line2D" parent="." unique_id=243981609]
 points = PackedVector2Array(0, 0, 0, 0)

@@ -1,12 +1,15 @@
 extends RigidBody2D
 
-@export var max_impulse = 400
-@export var arrow_angle = 0.1
-@export var arrow_tip_length = 0.8
-@export var draw_scalar = 0.5
-
+var shot_allowed = true
+#impulse related
+@export var impulse_mult = 2
+var max_impulse = 400
+#arrow drawing
+var arrow_angle = 0.2
+var arrow_tip_length = 0.8
+var draw_scalar = 0.5
 var color_gradient: Gradient = Gradient.new()
-	
+
 var mouse = {
 	position = Vector2.ZERO,
 	is_down = false,
@@ -28,13 +31,18 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	#
+	if(!shot_allowed):
+		$Sprite2D.modulate = Color(0.6,0.6,0.6)
+	else:
+		$Sprite2D.modulate = Color(1,1,1)
 	#Set Drag_Vector and Limit it to max length
 	mouse.drag_vector = mouse.position - mouse.initial_position
 	mouse.drag_vector = mouse.drag_vector.limit_length(max_impulse)
 	#Make Arrow Visible
-	$ArrowBase.visible = mouse.is_down && mouse.drag_vector.length() > 20
-	$ArrowBase/ArrowHeadLeft.visible = mouse.is_down && mouse.drag_vector.length() > 20
-	$ArrowBase/ArrowHeadRight.visible = mouse.is_down && mouse.drag_vector.length() > 20
+	$ArrowBase.visible = mouse.is_down && mouse.drag_vector.length() > 20 && shot_allowed
+	$ArrowBase/ArrowHeadLeft.visible = mouse.is_down && mouse.drag_vector.length() > 20 && shot_allowed
+	$ArrowBase/ArrowHeadRight.visible = mouse.is_down && mouse.drag_vector.length() > 20 && shot_allowed
 	#Draw Arrow/Set Line Points
 
 	var final_angle = (-mouse.drag_vector).angle()
@@ -58,6 +66,11 @@ func _process(delta: float) -> void:
 	$ArrowBase/ArrowHeadLeft.width = arrow_width
 	$ArrowBase/ArrowHeadRight.width = arrow_width
 
+func _physics_process(delta: float) -> void:
+	if linear_velocity.length() < 20:
+		shot_allowed = true
+	else:
+		shot_allowed = false
 
 func _input(event: InputEvent) -> void:
 	if(event is InputEventMouseMotion):
@@ -66,10 +79,12 @@ func _input(event: InputEvent) -> void:
 		if(!mouse.is_down && event.pressed):
 			mouse.initial_position = event.position
 		elif(mouse.is_down && !event.pressed):
-			if(mouse.drag_vector.length() > 20):
+			if(mouse.drag_vector.length() > 20  && shot_allowed):
 				var new_impulse = -mouse.drag_vector
-				apply_impulse(new_impulse)
-		mouse.is_down = event.pressed 
+				apply_impulse(new_impulse*impulse_mult)
+				shot_allowed = false
+				print('shot no more')
+		mouse.is_down = event.pressed
 		
 		
 	
