@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 EventBus="*uid://dojylcr6aexnw"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

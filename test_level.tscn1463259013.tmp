@@ -1,0 +1,17 @@
+[gd_scene format=4 uid="uid://7tfswcubla41"]
+
+[ext_resource type="Script" uid="uid://clw1bfvu0pe8k" path="res://test_level.gd" id="1_4ptq8"]
+[ext_resource type="PackedScene" uid="uid://dybrmr67140fh" path="res://player_ball.tscn" id="1_gojnm"]
+[ext_resource type="PackedScene" uid="uid://85byadsmtcho" path="res://background_tilemap.tscn" id="2_sb12i"]
+[ext_resource type="PackedScene" uid="uid://dhiweb0tj15bi" path="res://object_tilemap.tscn" id="4_gbhdq"]
+
+[node name="TestLevel" type="Node2D" unique_id=782535655]
+script = ExtResource("1_4ptq8")
+metadata/level_id = 0
+
+[node name="BackgroundTilemap" parent="." unique_id=1684200721 instance=ExtResource("2_sb12i")]
+
+[node name="ObjectTilemap" parent="." unique_id=1978746848 instance=ExtResource("4_gbhdq")]
+tile_map_data = PackedByteArray("AAD+//3/AAAEAAAAAAD+//7/AAAIAAEAAAD+////AAAEAAEAAAD+/wAAAAAIAAEAAAD+/wEAAAAEAAEAAAD+/wIAAAAEAAEAAAD+/wMAAAAEAAIAAAD//wMAAAAFAAIAAAAAAAMAAAAFAAAAAAABAAMAAAAFAAAAAAACAAMAAAAFAAIAAAADAAMAAAAFAAAAAAAEAAMAAAAFAAIAAAAFAAMAAAAFAAAAAAAGAAMAAAAFAAIAAAAHAAMAAAAFAAAAAAAIAAMAAAAFAAIAAAAJAAMAAAAIAAIAAAAJAAIAAAAEAAEAAAAJAAEAAAAIAAEAAAAJAAAAAAAEAAEAAAAJAP//AAAEAAEAAAAJAP7/AAAIAAEAAAAJAP3/AAAIAAAAAAAIAP3/AAAFAAIAAAAHAP3/AAAFAAAAAAAGAP3/AAAFAAAAAAAFAP3/AAAFAAIAAAAEAP3/AAAFAAAAAAADAP3/AAAFAAIAAAACAP3/AAAFAAAAAAABAP3/AAAFAAIAAAAAAP3/AAAFAAIAAAD///3/AAAFAAAAAAAIAAAAAQAAAAAAAQA=")
+
+[node name="PlayerBall" parent="." unique_id=972164472 instance=ExtResource("1_gojnm")]
