@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jegem5m5x1e1" path="res://player_ball.gd" id="1_60p4i"]
 [ext_resource type="Texture2D" uid="uid://d2mgmn5xvo3sj" path="res://art/PNG/Equipment/ball_golf.png" id="1_nw751"]
+[ext_resource type="PackedScene" uid="uid://bxiseltklxb37" path="res://hud.tscn" id="3_5e702"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nw751"]
 friction = 0.0
@@ -42,3 +43,9 @@ texture = ExtResource("1_nw751")
 shape = SubResource("CircleShape2D_60p4i")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1660914404]
+
+[node name="HUD" parent="." unique_id=1774042874 instance=ExtResource("3_5e702")]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0

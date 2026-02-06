@@ -82,6 +82,7 @@ func _input(event: InputEvent) -> void:
 			if(mouse.drag_vector.length() > 20  && shot_allowed):
 				var new_impulse = -mouse.drag_vector
 				apply_impulse(new_impulse*impulse_mult)
+				EventBus.current_score +=1
 				shot_allowed = false
 		mouse.is_down = event.pressed
 		

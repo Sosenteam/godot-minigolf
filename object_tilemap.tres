@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bt6utbpd8uspp" path="res://art/Tilesheet/elements.png" id="1_kfh5m"]
 [ext_resource type="PackedScene" uid="uid://dd8dya2mrjpee" path="res://hole.tscn" id="2_scyb6"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_scyb6"]
+tile_data = PackedInt32Array(131072, 262144, 0, 196608, 262144, 1, 262144, 262144, 1, 327680, 524288, 1, 393216, 262144, 1, 458752, 262144, 1, 524288, 262144, 2, 65537, 262144, 0, 131073, 524288, 2, 524289, 524288, 0, 589825, 262144, 2, 2, 262144, 0, 65538, 524288, 2, 589826, 524288, 0, 655362, 262144, 2, 3, 327680, 0, 655363, 327680, 0, 4, 327680, 0, 655364, 327680, 2, 5, 327680, 0, 655365, 327680, 2, 6, 327680, 2, 655366, 327680, 2, 7, 327680, 0, 655367, 327680, 0, 8, 524288, 0, 65544, 262144, 2, 589832, 262144, 0, 655368, 524288, 2, 65545, 524288, 0, 131081, 262144, 2, 524297, 262144, 0, 589833, 524288, 2, 131082, 524288, 0, 196618, 524288, 1, 262154, 524288, 1, 327690, 262144, 1, 393226, 524288, 1, 458762, 262144, 1, 524298, 524288, 2)
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kfh5m"]
 friction = 0.0
 bounce = 1.0
@@ -17,6 +20,7 @@ texture_region_size = Vector2i(64, 64)
 2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4.985841, 3.0373511, -2.9800427, 4.9858413, 2.9227347, 5.0431495, 4.9858413, 2.980043, 4.928532, -3.0373514, 2.8654256, -5.0431495, -3.071148, -5.1595283, -4.985841, -2.8081172)
 2:0/0/custom_data_0 = true
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.0076714, 32, -3.061142, 32, -2.980935, 5.02615, -5.975237, 2.9408326, -6.0287075, -3.0745068, -2.980936, -6.042074, 2.9541988, -6.0153394, 6.055441, -2.9675674, 5.9485016, 2.8873634, 3.0344028, 5.0796204)
 2:1/0 = 0
 4:1/0 = 0
 4:1/0/terrain_set = 0
@@ -28,6 +32,7 @@ texture_region_size = Vector2i(64, 64)
 6:1/0 = 0
 7:1/0 = 0
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 2.9124184, -5.096733, 3.0511055, -3.0857773, 5.963524, 2.9470901, 5.963524, 5.8595085, 2.981762, 5.9981956, -3.0511055, 3.0164337, -5.963523, -2.9470901, -5.8941803, -4.958046, -3.1204472, -32, -3.0511055)
 2:2/0 = 0
 4:2/0 = 0
 4:2/0/terrain_set = 0
@@ -52,6 +57,7 @@ texture_region_size = Vector2i(64, 64)
 7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.8625259, 3.0946598, -1.8625259, -2.9800434, 32, -3.0373516, 32, 2.9800415)
 7:2/0/terrains_peering_bit/right_side = 0
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 2.9366913, -32, 3.1045017, -32, -3.0205917, 32, -3.0205936)
 2:3/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -106,6 +112,7 @@ texture_region_size = Vector2i(64, 64)
 8:1/0/terrains_peering_bit/bottom_side = 0
 8:1/0/terrains_peering_bit/top_side = 0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 3.0205917, 32, -3.1044998, 5.076275, -3.0205956, 2.9786415, -5.957285, -3.2303581, -6.041189, -6.0831413, -3.0205956, -6.0831413, 2.768879, -2.8947372, 5.8733788, 2.8108292, 5.957283, 5.076275, 3.524025)
 3:2/0 = 0
 8:2/0 = 0
 8:2/0/terrain_set = 0
@@ -115,6 +122,7 @@ texture_region_size = Vector2i(64, 64)
 8:2/0/terrains_peering_bit/top_side = 0
 0:3/0 = 0
 3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 2.9366913, -32, 3.1045017, -32, -3.0205917, 32, -3.0205936)
 4:3/0 = 0
 5:3/0 = 0
 6:3/0 = 0
@@ -172,3 +180,4 @@ custom_data_layer_0/name = "is_goal"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_scyb6")
 sources/1 = SubResource("TileSetScenesCollectionSource_heu5i")
+pattern_0 = SubResource("TileMapPattern_scyb6")
